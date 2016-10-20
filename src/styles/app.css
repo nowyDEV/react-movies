@@ -1,0 +1,14 @@
+.container .search-bar {
+    margin: 20px;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.movie-title {
+    font-size: 2rem;
+}
