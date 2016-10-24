@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "gh-pages": "^0.11.0",
     "react-scripts": "0.6.1"
   },
-  "homepage": "http://myusername.github.io/my-app",
+  "homepage": "http://nowytr.github.io/react-movies",
   "dependencies": {
     "axios": "^0.15.2",
+    "lodash": "^4.16.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -15,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   }
 }

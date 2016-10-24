@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -14,10 +15,9 @@ class App extends Component {
       movies: []
     };
 
-    this.handleTermChange = this.handleTermChange.bind(this);
   }
 
-  handleTermChange(term) {
+  movieSearch(term) {
     const API_KEY = '08d578993efd398ff6d027e671d7b1a8';
     const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${term}`;
 
@@ -31,9 +31,12 @@ class App extends Component {
   }
 
   render() {
+    const movieSearch = _.debounce((term) => { this.movieSearch(term)}, 400);
+
     return (
       <div>
-        <SearchBar onTermChange={this.handleTermChange} />
+        <div className="tmdb-logo"><a href="https://www.themoviedb.org/" target="_blank"></a></div>
+        <SearchBar onTermChange={movieSearch} />
         <MovieList movies={this.state.movies} />
       </div>
     );
